@@ -1,0 +1,16 @@
+{
+  "name": "crashing-tailwind",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "app:watch": "npx shadow-cljs watch app",
+    "css:watch": "npx tailwindcss -i ./src/css/tailwind.css -o ./public/css/app.css --verbose --watch",
+    "clean": "rm -rf public/js public/css"
+  },
+  "devDependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "shadow-cljs": "2.19.6",
+    "tailwindcss": "^3.2.4"
+  }
+}
