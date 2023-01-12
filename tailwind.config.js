@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./public/js/cljs-runtime/my*.js"],
+  content: [
+    "./src/main/**/*.cljs"
+  ],
   theme: {
     extend: {},
   },

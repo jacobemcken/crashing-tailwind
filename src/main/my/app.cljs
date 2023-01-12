@@ -4,9 +4,14 @@
 (defn simple-component []
   [:div
    [:p "I am a component!"]
-   [:p.someclass
+   [:p
     "I have " [:strong "bold"]
-    [:span {:style {:color "red"}} " and red "] "text."]])
+    [:span {:class "text-red-700"} " and red "] "text."]])
+
+(defn ^:dev/after-load mount-root []
+  (let [root-el (.getElementById js/document "app")]
+    (rdom/unmount-component-at-node root-el)
+    (rdom/render [simple-component] root-el)))
 
 (defn ^:export run []
-  (rdom/render [simple-component] (js/document.getElementById "app")))
+  (mount-root))
